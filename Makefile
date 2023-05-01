@@ -1,4 +1,4 @@
-CC=gcc --std=c99 -g
+CC=cc --std=c99 -g
 
 test_circarray: test_circarray.c circarray.o
 	$(CC) test_circarray.c circarray.o -o test_circarray

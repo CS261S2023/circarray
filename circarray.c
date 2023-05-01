@@ -27,7 +27,6 @@ struct circarray* circarray_create() {
   struct circarray* ca = malloc(sizeof(struct circarray));
   assert(ca);
 
-  assert(ca->array);
   ca->length = 0;
   ca->capacity = CIRCARRAY_INIT_CAPACITY;
   ca->array = malloc(CIRCARRAY_INIT_CAPACITY * sizeof(int));
@@ -38,6 +37,7 @@ struct circarray* circarray_create() {
 
 void circarray_free(struct circarray* ca) {
   assert(ca);
+  assert(ca->array);
   free(ca->array);
   free(ca);
 }
